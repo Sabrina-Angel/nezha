@@ -16,7 +16,7 @@ RUN export DEBIAN_FRONTEND="noninteractive" && \
 
 WORKDIR /dashboard
 COPY ./resource ./resource
-COPY /dashboard-${TARGETOS}-${TARGETARCH} ./app
+COPY ./dashboard-${TARGETOS}-${TARGETARCH} ./app
 
 VOLUME ["/dashboard/data"]
 EXPOSE 80 5555
