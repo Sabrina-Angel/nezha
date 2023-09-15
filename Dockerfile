@@ -22,4 +22,4 @@ VOLUME ["/dashboard/data"]
 EXPOSE 80 5555
 ENTRYPOINT ["/entrypoint.sh"]
 
-USER 10001
+USER 10000
