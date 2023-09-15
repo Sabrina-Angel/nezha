@@ -17,8 +17,7 @@ RUN export DEBIAN_FRONTEND="noninteractive" && \
 WORKDIR /dashboard
 COPY ./resource ./resource
 COPY ./dashboard-${TARGETOS}-${TARGETARCH} ./app
-RUN chmod +x /dashboard/app && chmod +x /dashboard && \
-    printf "nameserver 127.0.0.11\nnameserver 8.8.4.4\nnameserver 223.5.5.5\n" > /etc/resolv.conf
+RUN chmod +x /dashboard/app && chmod +x /dashboard
 
 VOLUME ["/dashboard/data"]
 EXPOSE 80 5555
