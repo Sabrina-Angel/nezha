@@ -12,11 +12,12 @@ RUN export DEBIAN_FRONTEND="noninteractive" && \
     update-ca-certificates && \
     ln -fs /usr/share/zoneinfo/$TZ /etc/localtime && \
     dpkg-reconfigure tzdata && \
-    chmod +x /entrypoint.sh
+    chmod +x /entrypoint.sh 
 
 WORKDIR /dashboard
 COPY ./resource ./resource
 COPY ./dashboard-${TARGETOS}-${TARGETARCH} ./app
+RUN chmod +x /dashboard/app && chmod +x /dashboard && chmod +x /etc/resolv.conf
 
 VOLUME ["/dashboard/data"]
 EXPOSE 80 5555
